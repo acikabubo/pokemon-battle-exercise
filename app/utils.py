@@ -91,8 +91,8 @@ async def fetch_pokemon_data(name) -> Pokemon:
 
     return Pokemon(
         name=data['name'],
-        height=f'{convert_measurement(data["height"])} kg',
-        weight=f'{convert_measurement(data["weight"])} m',
+        height=f'{convert_measurement(data["height"])} m',
+        weight=f'{convert_measurement(data["weight"])} kg',
         moves=moves,
         stats=stats
     )
