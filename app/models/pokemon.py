@@ -1,12 +1,25 @@
+from typing import List
 from pydantic import BaseModel
 
 
+class Move(BaseModel):
+    name: str
+    power: int
+
+
 class Pokemon(BaseModel):
-    id_card: dict
+    name: str
+    height: str
+    weight: str
+    moves: List[str]
     stats: dict
 
-    def calculate_score(self):
-        """
-            Make sum of all stats values
-        """
-        return sum(self.stats.values())
+    @property
+    def card(self):
+        return {
+            "name": self.name,
+            "height": self.height,
+            "weight": self.weight
+        }
+
+

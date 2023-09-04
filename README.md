@@ -16,5 +16,11 @@ Scripts started with **docker** need to be executed inside docker container (aft
 
 [Code docs](http://localhost:8080/)
 
-## Execite unit tests
+## Execute unit tests
 **./scripts/docker_test.sh**
+
+## Usage
+
+curl -X POST http://127.0.0.1:8000/battle \
+    -H 'Content-Type: application/json' \
+    -d '{"pokemon1":"pikachu","pokemon2":"charmander"}'
